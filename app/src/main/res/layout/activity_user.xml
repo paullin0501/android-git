@@ -19,22 +19,40 @@
 
             <ImageView
                 android:id="@+id/mastery"
-                android:layout_width="150dp"
+                android:layout_width="375dp"
                 android:layout_height="150dp"
                 android:layout_weight="1" />
 
-            <EditText
-                android:id="@+id/us_name"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="0"
-                android:textSize="18sp" />
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/us_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="0"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/btn_reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reset Level and Record" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <ListView
+            android:id="@+id/history"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

@@ -1,6 +1,8 @@
 package com.example.asus.masteryviiintaichung;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.provider.Telephony;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +17,9 @@ import android.widget.Toast;
 
 public class Attraction extends AppCompatActivity {
 
+    SQLiteDatabase db;
+    DBOpenHelper openHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,12 +33,12 @@ public class Attraction extends AppCompatActivity {
         Button btn_findhotel = (Button)findViewById(R.id.btn_find);
 
         final Intent intent = getIntent();
-        String name = intent.getStringExtra("NAME");
-        String addr = intent.getStringExtra("ADDR");
+        final String name = intent.getStringExtra("NAME");
         String info = intent.getStringExtra("INFO");
         int imgID = intent.getIntExtra("ID", R.drawable.ic_launcher_background);
         final double Px = intent.getDoubleExtra("PX",24);
         final double Py = intent.getDoubleExtra("PY", 120);
+        final float score = intent.getFloatExtra("SCORE", 0);
 
         img.setImageResource(imgID);
         tv_name.setText(name);
@@ -48,6 +53,32 @@ public class Attraction extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btn_check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openHelper = new DBOpenHelper(Attraction.this);
+                db = openHelper.getWritableDatabase();
+
+                db.execSQL("insert into his values('" + name + "')");
+
+                Cursor cursor = db.rawQuery("select * from me;", null);
+                cursor.moveToFirst();
+
+                float level = cursor.getFloat(1);
+                float newlevel = level + score;
+                String stringlevel = String.valueOf(newlevel);
+                if(level < 7) {
+                    db.execSQL("update me set level=" + newlevel + " where level=" + level + ";");
+                    Toast toast = Toast.makeText(Attraction.this, "Your level is " + stringlevel + " now !", Toast.LENGTH_SHORT);
+                    toast.show();
+                } else {
+                    Toast toast = Toast.makeText(Attraction.this, "Congratulation ! Your level is the Highest 7 !", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                db.close();
+                finish();
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -59,8 +90,9 @@ public class Attraction extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.mn_me:
-                Toast toast = Toast.makeText(Attraction.this, "asdfasdfasdf", Toast.LENGTH_LONG);
-                toast.show();
+                Intent t = getIntent();
+                t.setClass(Attraction.this, User.class);
+                startActivity(t);
                 break;
             case R.id.mn_set:
                 Toast toast1 = Toast.makeText(Attraction.this, "545621354", Toast.LENGTH_LONG);
