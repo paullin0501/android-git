@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "341414982271",
+    "firebase_url": "https://masteryvii.firebaseio.com",
+    "project_id": "masteryvii",
+    "storage_bucket": "masteryvii.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341414982271:android:96517c66a1d7a0b1",
+        "android_client_info": {
+          "package_name": "com.example.asus.masteryviiintaichung"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341414982271-74o9811nr5spsiud4k515g2nioai40a7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.asus.masteryviiintaichung",
+            "certificate_hash": "5fa03a840a1e6fef973c111491988ad7c35574b0"
+          }
+        },
+        {
+          "client_id": "341414982271-mlqthlffr29fn3l6o6006slictlnanvk.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "341414982271-mlqthlffr29fn3l6o6006slictlnanvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUOAWiqBURCKWJeX4zTkUzDMHkfypdl-E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341414982271-mlqthlffr29fn3l6o6006slictlnanvk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

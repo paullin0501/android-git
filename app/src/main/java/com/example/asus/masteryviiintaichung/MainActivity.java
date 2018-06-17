@@ -129,7 +129,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(t);
                 break;
             case R.id.mn_set:
-                Toast toast1 = Toast.makeText(MainActivity.this, "545621354", Toast.LENGTH_LONG);
+                Toast toast1 = Toast.makeText(MainActivity.this,
+                        "工作分配:\n程式碼:葉昭甫\n" +
+                        "創git team-project:林崇寶\n" +
+                        "上台報告:詹亞豪", Toast.LENGTH_LONG);
                 toast1.show();
                 break;
         }

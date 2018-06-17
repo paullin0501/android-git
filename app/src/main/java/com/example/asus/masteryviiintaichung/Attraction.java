@@ -79,6 +79,13 @@ public class Attraction extends AppCompatActivity {
                 finish();
             }
         });
+        btn_findhotel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.setClass(Attraction.this, HotelList.class);
+                startActivity(intent);
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -95,7 +102,10 @@ public class Attraction extends AppCompatActivity {
                 startActivity(t);
                 break;
             case R.id.mn_set:
-                Toast toast1 = Toast.makeText(Attraction.this, "545621354", Toast.LENGTH_LONG);
+                Toast toast1 = Toast.makeText(Attraction.this,
+                        "工作分配:\n程式碼:葉昭甫\n" +
+                                "創git team-project:林崇寶\n" +
+                                "上台報告:詹亞豪", Toast.LENGTH_LONG);
                 toast1.show();
                 break;
         }

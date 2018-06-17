@@ -10,6 +10,6 @@
         app:showAsAction="never"/>
     <item
         android:id="@+id/mn_set"
-        android:title="Setting"
+        android:title="About"
         app:showAsAction="never"/>
 </menu>

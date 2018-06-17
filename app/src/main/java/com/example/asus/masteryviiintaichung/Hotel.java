@@ -5,8 +5,25 @@ import android.graphics.Bitmap;
 public class Hotel {
     private String name;
     private String addr;
-    private String fax;
     private Bitmap img;
+    private double px;
+    private double py;
+
+    public double getPx() {
+        return px;
+    }
+
+    public void setPx(double px) {
+        this.px = px;
+    }
+
+    public double getPy() {
+        return py;
+    }
+
+    public void setPy(double py) {
+        this.py = py;
+    }
 
     public String getName() {
         return name;
@@ -22,14 +39,6 @@ public class Hotel {
 
     public void setAddr(String addr) {
         this.addr = addr;
-    }
-
-    public String getFax() {
-        return fax;
-    }
-
-    public void setFax(String fax) {
-        this.fax = fax;
     }
 
     public Bitmap getImg() {
