@@ -3,6 +3,7 @@ package com.example.asus.masteryviiintaichung;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.provider.Telephony;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,13 +35,15 @@ public class Attraction extends AppCompatActivity {
 
         final Intent intent = getIntent();
         final String name = intent.getStringExtra("NAME");
-        String info = intent.getStringExtra("INFO");
-        int imgID = intent.getIntExtra("ID", R.drawable.ic_launcher_background);
-        final double Px = intent.getDoubleExtra("PX",24);
-        final double Py = intent.getDoubleExtra("PY", 120);
-        final float score = intent.getFloatExtra("SCORE", 0);
+        final String info = intent.getStringExtra("INFO");
+        final Bitmap imgID = intent.getParcelableExtra("ID");
+        final double Px = intent.getDoubleExtra("PX",23.5);
+        final double Py = intent.getDoubleExtra("PY", 120.2);
+        final float score = 1;
 
-        img.setImageResource(imgID);
+        Log.v("Test",name +":" + info + " , " + Px + "," + Py + " : " + score);
+
+        img.setImageBitmap(imgID);
         tv_name.setText(name);
         tv_info.setText(info);
 
@@ -78,8 +81,10 @@ public class Attraction extends AppCompatActivity {
                 }
                 db.close();
                 finish();
+
             }
         });
+
         btn_findhotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

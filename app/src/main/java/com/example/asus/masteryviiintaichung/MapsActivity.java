@@ -1,7 +1,7 @@
 package com.example.asus.masteryviiintaichung;
 
 import android.content.Intent;
-import android.support.annotation.Px;
+
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,14 +10,19 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.logging.Logger;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    Double px;
-    Double py;
+    double mx, my;
+    double px;
+    double py;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,14 +47,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        UiSettings uiSettings = googleMap.getUiSettings();
+        uiSettings.setZoomControlsEnabled(true);
+        uiSettings.setCompassEnabled(true);
+
         // Add a marker in Sydney and move the camera
-        LatLng here = new LatLng(px, py);
-        mMap.addMarker(new MarkerOptions().position(here).title("I'm Here !"));
+        LatLng here = new LatLng(px,py);
+        mMap.addMarker(new MarkerOptions().position(here).title("Target Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(here));
-        mMap.setMinZoomPreference(16.0f);
     }
 }
