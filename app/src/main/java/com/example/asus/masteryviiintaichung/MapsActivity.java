@@ -1,10 +1,8 @@
 package com.example.asus.masteryviiintaichung;
 
 import android.content.Intent;
-import android.support.annotation.Px;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -18,6 +16,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     Double px;
     Double py;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

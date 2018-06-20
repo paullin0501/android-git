@@ -41,7 +41,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDx7fFzMVU8AXT9l2u-bULSSQO5860XGbY" />
@@ -50,7 +49,10 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".User" />
-        <activity android:name=".HotelList"></activity>
+        <activity android:name=".HotelList" />
+        <activity
+            android:name=".MapsActivity2"
+            android:label="@string/title_activity_maps2"></activity>
     </application>
 
 </manifest>

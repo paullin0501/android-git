@@ -3,11 +3,10 @@ package com.example.asus.masteryviiintaichung;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,13 +21,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Place> places = new ArrayList<Place>();
     SQLiteDatabase db;
     DBOpenHelper openHelper;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 "國立自然科學博物館，簡稱科博館，是位於臺灣臺中市北區的公立科學博物館，是中華民國國家十二項建設文化建設項下興建的首座科學博物館。\n\n"+
                         "館區由科學中心、太空劇場、生命科學廳、人類文化廳、地球環境廳與植物園所共同組成。\n\n"+
                         "館內內容豐富且深具教育意義，館外的園區也適合休閒踏青，故歷年來參觀人數平均居全臺博物館第二名，高達三百萬人次左右。"));
-        places.add(new Place("道禾六藝文化館",R.drawable.museum,"403台中市西區林森路33號",
+        places.add(new Place("道禾六藝文化館",R.drawable.place9,"403台中市西區林森路33號",
         0.5F,24.134369, 120.673977,
         "台中刑務所演武場簡稱刑武場，現名道禾六藝文化館，為市內僅存的日式武道館，功能為提供當時台中監獄服務的警官練武，2006年發生火災後，由文化局著手修復，現已開放民眾參觀。\n\n"+
                 "主體建築左側為柔道場，右側為劍道場，後方則設置神龕，附屬的建築物其一是擺放燒毀前的房屋構件及相關歷史照片、文物等。\n\n"+
@@ -176,5 +176,9 @@ public class MainActivity extends AppCompatActivity {
             iv.setImageResource(item.imgID);
             return itemlayout;
         }
+
+    }
+    public void showMyLocation(View view) {
+        startActivity(new Intent(getApplicationContext(),MapsActivity2.class));
     }
 }
