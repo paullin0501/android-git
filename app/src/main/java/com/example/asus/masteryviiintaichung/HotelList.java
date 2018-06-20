@@ -81,7 +81,7 @@ public class HotelList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 double px = lsHotels.get(i).getPx();
                 double py = lsHotels.get(i).getPy();
-                Intent intent = getIntent();
+                Intent intent = new Intent();
                 intent.setClass(HotelList.this, MapsActivity.class);
                 intent.putExtra("PX", px);
                 intent.putExtra("PY", py);

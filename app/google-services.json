@@ -1,39 +1,47 @@
 {
   "project_info": {
-    "project_number": "341414982271",
-    "firebase_url": "https://masteryvii.firebaseio.com",
-    "project_id": "masteryvii",
-    "storage_bucket": "masteryvii.appspot.com"
+    "project_number": "416364771052",
+    "firebase_url": "https://masteryvii-export.firebaseio.com",
+    "project_id": "masteryvii-export",
+    "storage_bucket": "masteryvii-export.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:341414982271:android:96517c66a1d7a0b1",
+        "mobilesdk_app_id": "1:416364771052:android:96517c66a1d7a0b1",
         "android_client_info": {
           "package_name": "com.example.asus.masteryviiintaichung"
         }
       },
       "oauth_client": [
         {
-          "client_id": "341414982271-74o9811nr5spsiud4k515g2nioai40a7.apps.googleusercontent.com",
+          "client_id": "416364771052-fenb9f5smk8tpnoobqjfj78k2kfpg3u5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.asus.masteryviiintaichung",
-            "certificate_hash": "5fa03a840a1e6fef973c111491988ad7c35574b0"
+            "certificate_hash": "04b0769d5f9505026293ae97624500b61c2b189e"
           }
         },
         {
-          "client_id": "341414982271-mlqthlffr29fn3l6o6006slictlnanvk.apps.googleusercontent.com",
+          "client_id": "416364771052-igps4hnd2oemjd8efbtg46vsh2beogvq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.asus.masteryviiintaichung",
+            "certificate_hash": "acf984c4e8df46764551ad8a418beb3ee695b3d5"
+          }
+        },
+        {
+          "client_id": "416364771052-2g1mqt9d1et70niqd06mmlnh97fd8p6a.apps.googleusercontent.com",
           "client_type": 3
         },
         {
-          "client_id": "341414982271-mlqthlffr29fn3l6o6006slictlnanvk.apps.googleusercontent.com",
+          "client_id": "416364771052-2g1mqt9d1et70niqd06mmlnh97fd8p6a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCUOAWiqBURCKWJeX4zTkUzDMHkfypdl-E"
+          "current_key": "AIzaSyCb91vkJzlEoVFddGzMmodvGLgahRAyzuo"
         }
       ],
       "services": {
@@ -44,7 +52,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "341414982271-mlqthlffr29fn3l6o6006slictlnanvk.apps.googleusercontent.com",
+              "client_id": "416364771052-2g1mqt9d1et70niqd06mmlnh97fd8p6a.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

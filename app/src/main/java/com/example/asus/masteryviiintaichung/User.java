@@ -66,13 +66,13 @@ public class User extends AppCompatActivity {
         level = cursor.getFloat(1);
         us_name.setText(oldname);
         db.close();
-        if(level > 0)   mastery.setImageResource(R.drawable.i);
-        if(level > 1)   mastery.setImageResource(R.drawable.ii);
-        if(level > 2)   mastery.setImageResource(R.drawable.iii);
-        if(level > 3)   mastery.setImageResource(R.drawable.iv);
-        if(level > 4)   mastery.setImageResource(R.drawable.v);
-        if(level > 5)   mastery.setImageResource(R.drawable.vi);
-        if(level > 6)   mastery.setImageResource(R.drawable.vii);
+        if(level >= 1)   mastery.setImageResource(R.drawable.one);
+        if(level >= 2)   mastery.setImageResource(R.drawable.two);
+        if(level >= 3)   mastery.setImageResource(R.drawable.three);
+        if(level >= 4)   mastery.setImageResource(R.drawable.four);
+        if(level >= 5)   mastery.setImageResource(R.drawable.five);
+        if(level >= 6)   mastery.setImageResource(R.drawable.six);
+        if(level >= 7)   mastery.setImageResource(R.drawable.seven);
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 String info = places.get(position).info;
                 float score = places.get(position).score;
 
-                Intent intent = getIntent();
+                Intent intent = new Intent();
                 intent.setClass(MainActivity.this, Attraction.class);
                 intent.putExtra("NAME", name);
                 intent.putExtra("ID", imgid);
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.mn_me:
-                Intent t = getIntent();
+                Intent t = new Intent();
                 t.setClass(MainActivity.this, User.class);
                 startActivity(t);
                 break;

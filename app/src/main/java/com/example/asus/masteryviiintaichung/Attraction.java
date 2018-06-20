@@ -47,6 +47,7 @@ public class Attraction extends AppCompatActivity {
         btn_map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent();
                 intent.setClass(Attraction.this, MapsActivity.class);
                 intent.putExtra("PX", Px);
                 intent.putExtra("PY", Py);
