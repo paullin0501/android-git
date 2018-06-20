@@ -3,10 +3,8 @@ package com.example.asus.masteryviiintaichung;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.Telephony;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,7 +41,11 @@ public class Attraction extends AppCompatActivity {
         img.setImageResource(imgID);
         tv_name.setText(name);
         tv_info.setText(info);
-
+        double latitude = 0;
+        double longitude;
+        Intent i = new Intent();
+        i.getDoubleExtra("lacx",latitude );
+        i.getDoubleExtra("lacy",latitude );
         btn_map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,9 +56,11 @@ public class Attraction extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        final double finalLatitude = latitude;
         btn_check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 openHelper = new DBOpenHelper(Attraction.this);
                 db = openHelper.getWritableDatabase();
 
@@ -69,6 +73,10 @@ public class Attraction extends AppCompatActivity {
                 float newlevel = level + score;
                 String stringlevel = String.valueOf(newlevel);
                 if(level < 7) {
+                 /*if(Px- finalLatitude >0.3){
+                        Toast toast = Toast.makeText(Attraction.this, "你還沒到該景點!!", Toast.LENGTH_SHORT);
+                        toast.show();
+                   }*/
                     db.execSQL("update me set level=" + newlevel + " where level=" + level + ";");
                     Toast toast = Toast.makeText(Attraction.this, "Your level is " + stringlevel + " now !", Toast.LENGTH_SHORT);
                     toast.show();
@@ -92,6 +100,9 @@ public class Attraction extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_layout, menu);
         return true;
+    }
+    public void showMyLocation(View view) {
+        startActivity(new Intent(getApplicationContext(),MapsActivity2.class));
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.example.asus.masteryviiintaichung;
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -22,7 +23,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallback{
-
     private GoogleMap mMap;
     LocationManager locationManager;
     private static final int REQUEST_LOCATION_PERMISSION = 1;
@@ -34,6 +34,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps2);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.maps);
         mapFragment.getMapAsync(this);
@@ -50,6 +51,9 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
             public void onLocationChanged(Location location) {
                 double latitude = location.getLatitude();
                 double longitude = location.getLongitude();
+                Intent intent = new Intent();
+                intent.putExtra("lacx",latitude );
+                intent.putExtra("lacy",longitude );
                 //get the location name from latitude and longitude
                 Geocoder geocoder = new Geocoder(getApplicationContext());
                 try {
@@ -108,3 +112,4 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
 
 
 }
+
