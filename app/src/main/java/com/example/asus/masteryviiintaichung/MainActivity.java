@@ -208,6 +208,9 @@ public class MainActivity extends AppCompatActivity {
         }
         return null;
     }
+    public void showMyLocation(View view) {
+        startActivity(new Intent(getApplicationContext(),MapsActivity2.class));
+    }
 
     public class PlaceArrayAdapter extends ArrayAdapter<Place> {
         Context context;
@@ -237,5 +240,6 @@ public class MainActivity extends AppCompatActivity {
             iv.setImageBitmap(item.imgID);
             return itemlayout;
         }
+
     }
 }

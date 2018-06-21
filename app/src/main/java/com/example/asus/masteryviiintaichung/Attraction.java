@@ -93,6 +93,9 @@ public class Attraction extends AppCompatActivity {
             }
         });
     }
+    public void showMyLocation(View view) {
+        startActivity(new Intent(getApplicationContext(),MapsActivity2.class));
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_layout, menu);
