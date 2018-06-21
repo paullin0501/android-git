@@ -10,6 +10,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -52,8 +53,8 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
                 double latitude = location.getLatitude();
                 double longitude = location.getLongitude();
                 Intent intent = new Intent();
-                intent.putExtra("lacx",latitude );
-                intent.putExtra("lacy",longitude );
+                intent.putExtra("lacx",latitude);
+                intent.putExtra("lacy",longitude);
                 //get the location name from latitude and longitude
                 Geocoder geocoder = new Geocoder(getApplicationContext());
                 try {

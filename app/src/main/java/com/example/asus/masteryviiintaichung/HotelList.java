@@ -2,11 +2,13 @@ package com.example.asus.masteryviiintaichung;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -207,11 +209,16 @@ public class HotelList extends AppCompatActivity {
                 startActivity(t);
                 break;
             case R.id.mn_set:
-                Toast toast1 = Toast.makeText(HotelList.this,
-                        "工作分配:\n程式碼:葉昭甫\n" +
-                                "創git team-project:林崇寶\n" +
-                                "上台報告:詹亞豪", Toast.LENGTH_LONG);
-                toast1.show();
+                AlertDialog.Builder ad = new AlertDialog.Builder(this);
+                ad.setTitle("關於本程式");
+                ad.setMessage("作者:\nD0588785  葉昭甫\nD0543074  詹亞豪\nD0542278  林崇寶");
+                DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                };
+                ad.setPositiveButton("確定",listener);
+                ad.show();
                 break;
         }
         return true;
